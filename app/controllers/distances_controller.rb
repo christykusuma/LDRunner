@@ -5,6 +5,7 @@ class DistancesController < ApplicationController
   def show
     @users = User.where( distance_id: @distance.id)
     @distance = Distance.find_by(id: @current_user.distance_id)
+    @races = Race.all
   end
 
   # POST /distances

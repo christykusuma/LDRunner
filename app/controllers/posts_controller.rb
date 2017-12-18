@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # This is allowing me to only see posts from my current friends
   def index
     @posts = @current_user ? @current_user.friends_posts : []
-    @races = Race.all
+    @races = @current_user ? Race.where(id: @current_user.friends_races{|race| race.race_id}) : []
   end
 
   # GET /posts/1

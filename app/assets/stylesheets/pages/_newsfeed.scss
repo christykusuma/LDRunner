@@ -9,6 +9,7 @@
 	background-color: $secondary-color;
 	margin-top: 25px;
 	width: 100vw;
+	min-height: 100vh;
 
 	&__title--races {
 		background-color: black;
@@ -78,10 +79,16 @@
 		display: inline-block;
 		font-size: 1.4rem;
 		text-align: center;
+		a:active, a:link {
+			color: $white-color;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-family: $sans-serif-font;
+			letter-spacing: 3px;
+		}
 	}
 	&__races {
 		width: 30%;
-		height: 85vh;
 		margin: 6.5% 0.5%;
 		color: black;
 		border: black solid 18px;
@@ -93,11 +100,16 @@
 		font-size: 1.55rem;
 		background-color: $white-color;
 		position: relative;
+		a:link, a:visited {
+			color: black;
+			text-decoration: none;
+		}
 		.date {
 			background-color: black;
 			color: $white-color;
-			padding: 8px;
+			padding: 8px 3px 8px 13px;
 			margin-right: 10px;
+			letter-spacing: 6px;
 		}
 	}
 	&__race-item:hover &__race-item--add {
@@ -117,10 +129,10 @@
 		top: 0;
 		right: 0;
 		height: 100%;
-		width: 100%;
+		width: 50px;
 	}
 	&__race-item--add-icon {
-		transform: scale(1.7);
+		transform: scale(2.7);
 	}
 	&__race-item--add-icon:hover {
 		background-color: black;

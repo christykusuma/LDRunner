@@ -21,6 +21,15 @@
         z-index: 4;
         font-family: $sans-serif-font;
     }
+    &__edit-user, &__edit-user:visited, &__edit-user:link {
+        color: $white-color;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.3rem;
+    }
+    &__edit-user:hover {
+        color: $primary-color;
+    }  
 	&__photo--self {
         width: 100%;
 	}
@@ -30,7 +39,7 @@
         position: absolute;
         text-transform: lowercase;
         top: 50%;
-        left: 50%;
+        left: 52%;
         text-align: left;
         transform: translate(-100%, -50%);
         letter-spacing: 3px;
@@ -80,8 +89,9 @@
         text-transform: uppercase;
         letter-spacing: 8px;
         position: relative;
-    }
-    &__add-race {
+    }  
+    &__add-race, &__add-race:visited, &__add-race:link {
+        color: $white-color;
         position: absolute;
         right: 3%;
         transform: scale(1.5);
@@ -121,7 +131,8 @@
         letter-spacing: 8px;
         position: relative;
     }
-    &__add-post {
+    &__add-post, &__add-post:visited, &__add-post:link {
+        color: $white-color;
         position: absolute;
         right: 7%;
         transform: scale(1.6);
@@ -166,6 +177,7 @@
 		background-color: $white-color;
 		width: 100%;
         padding: 15px;
+        padding-bottom: 35px;
 		display: inline-block;
 		font-size: 1.5rem;
         text-align: left;
@@ -230,13 +242,22 @@
         }
     }
     &__race-item:hover {
-        background-color: $tertiary-color;
+        background-color: #3a2225;
         color: $white-color;
+        a:link, a:visited {
+            color: white;
+        }
     }
     &__race-info {
         height: 70px;
         padding: 25px 10px;
         width: 20%;
+        font-size: 1.8rem;
+        font-family: $sans-serif-font;
+        a:link, a:visited {
+            color: black;
+            text-decoration: none;
+        }
     }
     &__race-info:last-child {
         width: 10%;

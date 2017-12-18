@@ -1,14 +1,23 @@
-<div class="login">
 
-	<h1>Login</h1>
+<script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+<nav class="landing-navigation">
+	<div class="landing-navigation__logo">LD<span style="color: white;">RUNNER</span></div>
+	<ul class="landing-navigation__list-items">
+		<li class="landing-navigation__login">
+			<%= form_for User.new, url: login_path, action: :post do |f| %>
+				<%= f.label :username %>
+				<%= f.text_field :username%> &nbsp;
+				<%= f.label :password %>
+				<%= f.password_field :password %>
+				<%= f.submit "Sign in" %>
+			<% end %>		
+		</li>
+	</ul>
+</nav>
 
-	<%= form_for User.new, url: login_path, action: :post do |f| %>
-	<%= f.label :username %>
-	<%= f.text_field :username%>
-	<%= f.label :password %>
-	<%= f.password_field :password %>
-	<%= f.submit "Sign in" %>
-	<% end %>
+<div class="landing">
+	<img class="landing-photo" src="landing.jpg"/>
+	<div class="landing-top">
 
 	<%= link_to 'New User', new_user_path %>
 

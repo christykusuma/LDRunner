@@ -11,19 +11,29 @@
 					<a href="#"><i class="fa fa-search races__search--icon" aria-hidden="true"></i></a>
 			</div>
 			<div class="races__results">
-					<ul class="races__results--list">
-							<li class="races__results--list-item">Race result</li>
-							<li class="races__results--list-item">Race result</li>
-							<li class="races__results--list-item">Race result</li>
-							<li class="races__results--list-item">Race result</li>
-							<li class="races__results--list-item">Race result</li>
-							<li class="races__results--list-item">Race result</li>
-							<li class="races__results--list-item">Race result</li>
-							<li class="races__results--list-item">Race result</li>
-					</ul>
+					<table class="races__results--list">
+					<% @races.each do |race| %>
+						<%= link_to race do %>
+						<tr class="races__results--list-item">
+							<td>
+							<span class="date">
+								<%= race.date.strftime("%B %d, %Y") %>
+							</span> <%= race.name %>
+							</td>
+							<td>
+								<%= race.address %>
+							</td>
+							<td>
+								<%= race.details %>
+							</td>
+						</tr>
+						<% end %>
+					<% end %>
+					</table>
 			</div>
 	</div>
 </div>
+
 
 # <div class="distance-group" class="page">
 # 	<div class="distance">

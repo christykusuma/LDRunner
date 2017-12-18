@@ -11,6 +11,10 @@ class User < ApplicationRecord
 		Post.where(user_id: [Friendship.where(user_id: id).map{|f| f.friend_id}])
 	end
 
+	def friends_races
+		UserRace.where(user_id: [Friendship.where(user_id: id).map{|f| f.friend_id}])
+	end
+
 	def full_name
 		first_name + ' ' + last_name
 	end

@@ -1,7 +1,7 @@
 <div class="navigation__search-bar">
 
 	<%= form_tag search_path, :method => 'get' do %>
-		<%= text_field_tag :search, params[:search], :class => 'navigation__search-bar--input' %>
+		<%= text_field_tag :search, params[:search], :class => 'navigation__search-bar--input', placeholder: "Search friends..." %>
 		<%= button_tag(type: "submit", class: 'navigation__search-bar--button') do %>
 			<i class="fa fa-search" aria-hidden="true"></i>
 		<% end %>
