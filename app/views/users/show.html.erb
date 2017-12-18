@@ -3,6 +3,9 @@
 <div class="container">
 	<div class="profile">
 			<div class="profile__info">
+				<% if params[:id] == @current_user.id.to_s %>
+					| <%= link_to 'Edit Profile', edit_user_path(@user) %>
+        		 <% end %>
 							<figure class="profile__shape"><%= image_tag @user.photo.url(:medium), class: "profile__photo--self" %></figure>				
 					<div class="profile__description--self">
 							<span class="profile__name">
