@@ -1,0 +1,546 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+.navigation {
+  background-color: #88686b;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  font-size: 2rem;
+  width: 100%;
+  height: 80px;
+  margin-left: -33px;
+  padding: 15px;
+  text-transform: uppercase;
+  font-family: "Mukta", sans-serif; }
+  .navigation:not(:last-child) {
+    margin-right: 10%; }
+  .navigation__logo {
+    display: inline-block;
+    padding: 10px;
+    margin-right: 1.5%;
+    font-size: 2.25rem;
+    font-weight: bold;
+    vertical-align: center;
+    letter-spacing: 6px;
+    margin-left: 20px; }
+  .navigation__search-bar {
+    display: inline-block;
+    padding-bottom: 5px;
+    width: 33%;
+    vertical-align: bottom; }
+    .navigation__search-bar--input {
+      height: 30px;
+      width: 400px;
+      margin-top: 9px;
+      vertical-align: top; }
+    .navigation__search-bar--button {
+      background-color: transparent;
+      border: none; }
+    .navigation__search-bar .fa-search {
+      padding: 2px;
+      margin-top: 10px;
+      width: 28px;
+      height: 28px;
+      color: #0a0a0a; }
+    .navigation__search-bar .fa-search:hover {
+      color: #eae8e8; }
+  .navigation__list-items {
+    width: 50%;
+    display: inline;
+    list-style-type: none;
+    text-align: right; }
+  .navigation__list-items li a, .navigation__list-items li {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 11px;
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: #eae8e8;
+    letter-spacing: 5px; }
+  .navigation__list-items a:hover {
+    background-color: transparent; }
+  .navigation__list-items li:hover {
+    background-color: rgba(10, 10, 10, 0.3);
+    border-radius: 2px; }
+
+.newsfeed {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: "Mukta", sans-serif;
+  background-color: black;
+  background-color: #0a0a0a;
+  margin-top: 25px;
+  width: 100vw;
+  margin-left: -33px; }
+  .newsfeed__title--races {
+    background-color: black;
+    color: #eae8e8;
+    padding: 25px;
+    padding-left: 0;
+    text-align: center;
+    font-size: 1.95rem;
+    text-transform: uppercase;
+    letter-spacing: 8px; }
+  .newsfeed__title--posts {
+    color: #eae8e8;
+    padding: 25px;
+    padding-left: 0;
+    padding-top: 44px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 1.95rem;
+    text-transform: uppercase;
+    letter-spacing: 8px; }
+  .newsfeed__photo {
+    width: 100%;
+    height: 100%; }
+  .newsfeed__posts {
+    width: 65%;
+    margin: 6.5% 0.5%;
+    background-color: black; }
+  .newsfeed__post-item {
+    background-color: #eae8e8;
+    font-weight: bold;
+    color: black;
+    display: inline-block;
+    width: 30%;
+    height: 30%;
+    margin: 1.5%;
+    margin-bottom: 5%;
+    position: relative; }
+  .newsfeed__post-item:hover .newsfeed__detail {
+    opacity: 1;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding-top: 40px;
+    letter-spacing: 4px; }
+  .newsfeed__detail {
+    z-index: 4;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    top: 0;
+    height: 100%;
+    width: 100%; }
+  .newsfeed__description {
+    background-color: #88686b;
+    color: #eae8e8;
+    width: 100%;
+    padding: 5px;
+    display: inline-block;
+    font-size: 1.4rem;
+    text-align: center; }
+  .newsfeed__races {
+    width: 30%;
+    height: 85vh;
+    margin: 6.5% 0.5%;
+    color: black;
+    border: black solid 18px;
+    background-color: black; }
+  .newsfeed__race-item {
+    border-bottom: black solid 5px;
+    padding: 25px 10px;
+    font-size: 1.55rem;
+    background-color: #eae8e8;
+    position: relative; }
+    .newsfeed__race-item .date {
+      background-color: black;
+      color: #eae8e8;
+      padding: 8px;
+      margin-right: 10px; }
+  .newsfeed__race-item:hover .newsfeed__race-item--add {
+    opacity: 1;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding-top: 24px;
+    letter-spacing: 4px; }
+  .newsfeed__race-item--add {
+    z-index: 4;
+    position: absolute;
+    background-color: #88686b;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%; }
+  .newsfeed__race-item--add-icon {
+    transform: scale(1.7); }
+  .newsfeed__race-item--add-icon:hover {
+    background-color: black; }
+
+.profile {
+  background-color: #0a0a0a;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  width: 100vw;
+  margin-left: -33px; }
+  .profile__name {
+    text-transform: capitalize;
+    letter-spacing: 5px;
+    font-size: 2.5rem; }
+  .profile__info {
+    margin: 3%;
+    margin-top: 80px;
+    padding-top: 20px;
+    background-color: black;
+    height: 300px;
+    display: block;
+    text-align: center;
+    position: relative;
+    z-index: 4;
+    font-family: "Mukta", sans-serif; }
+  .profile__photo--self {
+    width: 100%; }
+  .profile__description--self {
+    color: #eae8e8;
+    font-size: 2.25rem;
+    position: absolute;
+    text-transform: lowercase;
+    top: 50%;
+    left: 50%;
+    text-align: left;
+    transform: translate(-100%, -50%);
+    letter-spacing: 3px;
+    line-height: 40px; }
+  .profile__description--record {
+    border-left: #88686b 5px solid;
+    padding-left: 10%;
+    padding-right: 7%;
+    margin-right: 10%;
+    color: #eae8e8;
+    font-size: 2.25rem;
+    letter-spacing: 3px;
+    line-height: 40px;
+    text-transform: lowercase;
+    top: 50%;
+    left: 50%;
+    text-align: right;
+    position: absolute;
+    transform: translate(25%, -50%); }
+  .profile__shape {
+    width: 17rem;
+    height: 17rem;
+    background-color: red;
+    display: inline-block;
+    float: left;
+    position: absolute;
+    top: 50%;
+    left: -1%;
+    transform: translate(100%, -50%);
+    clip-path: inset(20px 10px 10px 10px); }
+  .profile__title--races {
+    font-family: "Mukta", sans-serif;
+    background-color: black;
+    color: #eae8e8;
+    padding: 25px;
+    padding-left: 22px;
+    text-align: center;
+    font-size: 1.95rem;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    position: relative; }
+  .profile__add-race {
+    position: absolute;
+    right: 3%;
+    transform: scale(1.5); }
+  .profile__add-race:hover {
+    color: #88686b; }
+  .profile__title--records {
+    font-family: "Mukta", sans-serif;
+    background-color: black;
+    color: #eae8e8;
+    padding: 25px;
+    padding-left: 22px;
+    text-align: center;
+    font-size: 1.95rem;
+    text-transform: uppercase;
+    letter-spacing: 8px; }
+  .profile__title--posts {
+    font-family: "Mukta", sans-serif;
+    color: #eae8e8;
+    padding: 25px;
+    padding-left: 22px;
+    padding-top: 44px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 1.95rem;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    position: relative; }
+  .profile__add-post {
+    position: absolute;
+    right: 7%;
+    transform: scale(1.6); }
+  .profile__add-post:hover {
+    color: #88686b; }
+  .profile__posts {
+    margin: 3%;
+    background-color: black;
+    padding-bottom: 10px; }
+  .profile__post-item {
+    background-color: #eae8e8;
+    color: black;
+    display: flex;
+    width: 90%;
+    height: 27%;
+    margin: 1.5%;
+    margin-left: 5%;
+    margin-bottom: 3%; }
+  .profile__post-item:hover {
+    border: 10px solid #88686b; }
+  .profile__post-photo {
+    width: 20%;
+    height: 100%; }
+  .profile__post-description {
+    background-color: #eae8e8;
+    width: 100%;
+    padding: 15px;
+    display: inline-block;
+    font-size: 1.5rem;
+    text-align: left; }
+    .profile__post-description--title {
+      display: block;
+      padding: 20px;
+      padding-bottom: 0;
+      background-color: #eae8e8;
+      text-transform: uppercase;
+      font-family: "Mukta", sans-serif;
+      font-weight: bold;
+      letter-spacing: 5px; }
+    .profile__post-description--date {
+      display: block;
+      padding: 0px 20px;
+      margin-top: 10px;
+      font-style: italic;
+      background-color: #eae8e8; }
+    .profile__post-description--details {
+      display: inline-block;
+      padding: 0px 20px;
+      margin-top: 10px;
+      background-color: #eae8e8; }
+  .profile .container--races {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 3%; }
+  .profile__photo {
+    width: 100%;
+    height: 100%; }
+  .profile__races {
+    width: 68%;
+    color: black;
+    border: black solid 18px;
+    background-color: black;
+    display: inline-block; }
+  .profile__race-item {
+    border-bottom: black solid 5px;
+    background-color: #eae8e8; }
+    .profile__race-item .date {
+      background-color: black;
+      color: #eae8e8;
+      padding: 8px;
+      margin-right: 10px;
+      width: 190px;
+      text-align: center;
+      display: inline-block; }
+    .profile__race-item .date:nth-child(2) {
+      background-color: #88686b;
+      width: 90px; }
+  .profile__race-item:hover {
+    background-color: #2f2a2b;
+    color: #eae8e8; }
+  .profile__race-info {
+    height: 70px;
+    padding: 25px 10px;
+    width: 20%; }
+  .profile__race-info:last-child {
+    width: 10%; }
+  .profile__right-col {
+    display: inline-block;
+    width: 30%;
+    margin-left: 2%; }
+  .profile__races-modal {
+    opacity: 0;
+    display: none;
+    margin-top: 0px;
+    z-index: 7;
+    position: absolute;
+    width: 67.1%;
+    color: black;
+    border: black solid 18px;
+    background-color: black; }
+  .profile__new-race-item {
+    background-color: #2f2a2b;
+    height: 500px; }
+  .profile__records {
+    color: black;
+    border: black solid 18px;
+    background-color: black;
+    display: inline-block;
+    margin-bottom: 10%; }
+  .profile__record-item {
+    background-color: #0a0a0a;
+    color: #eae8e8;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Mukta", sans-serif;
+    border-top: 10px solid black;
+    padding: 20px 20px;
+    text-align: center;
+    font-size: 1.6rem; }
+  .profile__record-item:hover {
+    background-color: #170d0d; }
+  .profile__friends {
+    width: 500px; }
+  .profile__record-info {
+    height: 70px;
+    padding: 25px 10px;
+    width: 20%; }
+  .profile__record-info:first-child {
+    width: 16%; }
+
+.records__weather {
+  color: black;
+  border: black solid 18px;
+  background-color: black;
+  display: inline-block;
+  margin-bottom: 10%;
+  width: 100%; }
+
+.records__weather-info {
+  height: 70px;
+  padding: 25px 10px;
+  width: 20%;
+  background-color: #eae8e8; }
+  .records__weather-info:first-child {
+    width: 16%; }
+  .records__weather-info--date {
+    background-color: #0a0a0a;
+    color: #eae8e8;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Mukta", sans-serif;
+    border-top: 10px solid black;
+    padding: 20px 20px;
+    text-align: center;
+    font-size: 1.6rem; }
+  .records__weather-info--forecast {
+    font-family: "Mukta", sans-serif;
+    border-top: 10px solid black;
+    padding: 20px 20px;
+    text-align: center;
+    font-size: 1.6rem;
+    background-color: #170d0d;
+    color: #eae8e8;
+    font-weight: normal;
+    text-transform: capitalize; }
+    .records__weather-info--forecast .date {
+      color: #eae8e8;
+      letter-spacing: 2px;
+      padding: 8px 10px;
+      text-align: center;
+      display: inline-block;
+      background-color: #88686b;
+      width: 100px;
+      margin-right: 10px; }
+
+.records__search--input {
+  height: 30px;
+  width: 324.1px;
+  vertical-align: top; }
+
+.records__search--icon {
+  width: 28.5px;
+  height: 28px;
+  color: #eae8e8; }
+
+.records__search--icon:hover {
+  color: #88686b; }
+
+.races {
+  background-color: #0a0a0a;
+  padding-top: 50px;
+  padding-bottom: 10px; }
+  .races__map {
+    background-image: url("../img/map.jpg");
+    margin: 4% 2%;
+    margin-bottom: 0;
+    height: 50%;
+    width: 96%; }
+  .races__search {
+    margin: 4% 2%;
+    margin-top: 1%;
+    padding-top: 1.5%;
+    margin-bottom: -4%;
+    background-color: black;
+    width: 96%;
+    height: 50px;
+    display: flex; }
+  .races__search--input {
+    margin-left: 1%;
+    width: 78%;
+    height: 30px;
+    display: inline-block; }
+  .races__search--icon {
+    width: 2.65em;
+    height: 28px;
+    color: #88686b; }
+  .races__search--icon:hover {
+    color: #eae8e8; }
+  .races .svg-inline--fa.fa-w-16 {
+    width: 2.5em;
+    margin: auto 10px; }
+  .races__search--refine {
+    height: 30px;
+    margin-left: 2%;
+    width: 12.7%;
+    margin-right: 8px;
+    background-color: #88686b;
+    color: #eae8e8;
+    display: inline-block;
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 3px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: "Mukta", sans-serif; }
+  .races__results {
+    background-color: black;
+    margin: 4% 2%;
+    margin-top: 0;
+    height: 100%;
+    width: 96%; }
+  .races__results--list {
+    margin: 4% 2%;
+    padding-top: 1%;
+    background-color: black;
+    height: 50%; }
+  .races__results--list-item {
+    background-color: #0a0a0a;
+    margin: 1% auto;
+    height: 20%;
+    width: 100%; }
+  .races__results--list-item:hover {
+    background-color: #170d0d; }
+
+.container {
+  position: relative; }

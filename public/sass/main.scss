@@ -1,0 +1,18 @@
+@import "base/base";
+@import "abstracts/variables";
+
+@import "abstracts/mixins";
+
+@import "components/navigation";
+
+@import "pages/newsfeed";
+@import "pages/profile";
+@import "pages/races";
+@import "pages/index";
+
+.container {
+	// background-image: url(../img/header.jpg);
+    // background-size: cover;
+    // background-position: top;
+    position: relative;
+}

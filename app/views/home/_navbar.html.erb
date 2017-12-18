@@ -1,0 +1,13 @@
+<% if @current_user %>
+<script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+	<nav class="navigation">
+		<div class="navigation__logo">LD<span style="color: white;">RUNNER</span></div>
+		<%= render 'home/searchbar' %>
+		<ul class="navigation__list-items">
+			<li class="navigation__list-item--1"><%= link_to 'Home', posts_path %></li> | 
+			<li class="navigation__list-item--2"><%= link_to 'Profile', user_path(@current_user) %></li> |
+			<li class="navigation__list-item--3"><%= link_to 'Races', distance_path(@current_user) %></li> |
+			<li class="navigation__list-item--4"><%= link_to 'Logout', :logout %></li>
+		</ul>
+	</nav>
+<% end %>

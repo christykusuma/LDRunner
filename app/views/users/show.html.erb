@@ -1,0 +1,231 @@
+<%= render 'home/navbar' %>
+
+<div class="container">
+	<div class="profile">
+			<div class="profile__info">
+							<figure class="profile__shape"><%= image_tag @user.photo.url(:medium), class: "profile__photo--self" %></figure>				
+					<div class="profile__description--self">
+							<span class="profile__name">
+								<%= @user.first_name %> <%= @user.last_name %>
+							</span><br>
+							<%= @distance.description %> Runner<br>
+							<%= @user.city %>
+					</div>
+					<div class="profile__description--record">
+									<span class="profile__name">Personal Record</span><br>
+									Best Time: 02:00:00<br>
+									Tally Count: 10                      
+					</div>
+			</div>
+			<div class="container--races">
+					<table class="profile__races">
+							<th colspan="3" class="profile__title--races">
+									Upcoming Races 
+						
+									<% if params[:id] == @current_user.id.to_s %>
+										<%= link_to '<i class="fa fa-plus-circle profile__add-race" aria-hidden="true"></i>'.html_safe, new_race_path %>
+									<% end %>
+							</th>
+
+							<% if @user.races.length > 0 %>
+								<% @user.races.each do |race| %>
+
+							<tr class="profile__race-item">
+									<td class="profile__race-info">
+											<span class="date"><%= race.date.strftime("%B %d, %Y") %></span> 
+											<span class="date"><%= race.date.strftime("%I:%M%p") %></span>
+											<%= link_to race.name, race %>
+									</td>
+									<td class="profile__race-info">
+										<%= race.address %>
+									</td>
+							</tr>
+								<% end %>
+							<% else %>
+							<p>You have no upcoming races.</p>
+							<% end %>
+					</table>
+					<div class="profile__right-col">
+							<table class="records__weather">
+									<th class="profile__title--records" colspan="2">Weather</th>
+									<tr class="profile__title--records" colspan="2">
+											<td colspan="2">
+													<input class="records__search--input" type="text" placeholder="Search..">
+													<a href="#"><i class="fa fa-search records__search--icon" aria-hidden="true"></i></a>
+											</td>
+
+									</tr>
+
+									<tr class="records__weather-info">
+											<td class="records__weather-info--date" colspan="2">
+													Friday, December 15, 2017
+											</td>
+									</tr>
+
+									<tr class="records__weather-info">
+											<td class="records__weather-info--forecast" colspan="2">
+													<span class="date">08:00AM</span> Clear sky | -4°C degrees
+											</td>
+									</tr>
+							</table>
+
+							<table class="profile__records">
+									<th class="profile__title--records profile__friends" colspan="2">Friends List</th>
+									<tr class="profile__record">
+											<td class="profile__record-item" colspan="2">
+													Jane Doe
+											</td>
+									</tr>
+									<tr class="profile__record">
+											<td class="profile__record-item" colspan="2">
+													View All
+											</td>
+									</tr>
+							</table>
+					</div>
+			</div>
+			<div class="profile__posts">
+							<h3 class="profile__title--posts">
+									Your Posts
+									<% if params[:id] == @current_user.id.to_s %>
+										<%= link_to '<i class="fa fa-plus-circle profile__add-post" aria-hidden="true"></i>'.html_safe, new_post_path %>
+									<% end %>
+							</h3>
+							<% if @user.posts.length > 0 %>
+								<% @user.posts.each do |post| %>
+							
+								<div class="profile__post-item">
+										<img class="profile__post-photo" src="img/race-1.jpg">
+										<span class="profile__post-description">
+												<span class="profile__post-description--title">
+														<%= link_to post.title, post %>
+												</span>
+												<span class="profile__post-description--date">
+													<%=post.created_at.strftime("%A, %b %e, %Y") %> | <%=post.created_at.in_time_zone(-4).strftime("%I:%M %p") %>
+												</span>
+												<span class="profile__post-description--details">
+														Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac nisi quis dolor luctus tristique. Nunc non pulvinar est. Suspendisse lacinia, urna eget ornare accumsan, dolor eros sodales diam, ut consectetur lacus augue nec quam. Fusce consequat a ante eu tempus. Integer vehicula purus ac mauris suscipit elementum. Cras rutrum convallis turpis vel malesuada. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce in urna id nisl posuere ullamcorper. Aenean eget lacus ante. Cras in fringilla sem. In sit amet rhoncus quam, ut posuere dolor. Fusce nec mi nunc.
+												</span>
+										</span>
+								</div>
+
+									<% end %>
+							<% else %>
+								<p>You have no posts.</p>
+							<% end %>
+
+				</div>
+	</div>
+</div>
+
+# <table class="profile__races-modal">
+# <th colspan="3" class="profile__title--races">
+# 		Add a New Race
+# 		<i class="fa fa-minus-circle profile__add-race" aria-hidden="true"></i>
+# </th>
+# <tr class="profile__new-race-item">
+# 		<td class="profile__race-info">
+# 				Form
+# 		</td>
+# 		<td class="profile__race-info">
+# 				Form
+# 		</td>
+# </tr>
+# </table>
+
+# <div class="profile-page" class="page">
+
+# 	<div class="profile">
+
+# 	<table>
+#         <tr>
+#         	<td>
+#         		<%= image_tag @user.photo.url(:medium) %>
+#         	</td>
+#         	<td>
+#         		<h1 style="display: inline-block;"><%= @user.first_name %> <%= @user.last_name %></h1>
+#         		<% if params[:id] == @current_user.id.to_s %>
+#         		 | <%= link_to 'Edit Profile', edit_user_path(@user) %>
+#         		 <% end %>
+#         		<h2>Distance: <%= @distance.description %> Races</h2>
+#         	</td>
+#         </tr>
+#     </table>
+
+# 	<h2 style="display: inline-block;">Upcoming Races</h2>
+# 	<% if params[:id] == @current_user.id.to_s %>
+# 	 | <%= link_to 'Create New Race', new_race_path %>
+# 	 <% end %>
+
+# 	<table class="table-align">
+
+# 	  <tbody>
+# 	  	<% if @user.races.length > 0 %>
+# 	    	<% @user.races.each do |race| %>
+# 		      <tr>
+# 		      	<% if UserRace.find_by( race_id: race.id, user_id: @current_user.id ) %>
+# 		      	<td class="delete-button"><%= link_to 'x', race, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+# 		      	<% end %>
+
+# 		      	<td><%= race.date.strftime("%B %d, %Y") %><br>
+# 		      	<%= race.date.strftime("%I:%M%p") %></td>
+# 		      	<td style="font-weight: bold;"><%= link_to race.name, race %></td>
+# 		        <td style="width: 200px;"><%= race.distance %> Race:<br><%= race.details %></td>
+# 		        <td style="width: 170px;"><%= race.address %></td>
+
+# 		        <% if UserRace.find_by( race_id: race.id, user_id: @current_user.id ) %>
+# 		        <td><%= link_to 'Edit', edit_race_path(race) %></td>
+# 		         <% end %>
+# 			</tr>
+
+# 		 	<% end %>
+
+
+# 		<% else %>
+
+# 		    <p>You have no upcoming races.</p>
+		    
+# 	    <% end %>
+
+	    
+	        
+# 	  </tbody>
+# 	</table>
+
+# 	<h2 style="display: inline-block;">Your Posts</h2>
+# 	<% if params[:id] == @current_user.id.to_s %>
+# 	 | <%= link_to 'Create New Post', new_post_path %>
+# 	 <% end %>
+# 	<table class="table-align">
+
+# 	  <tbody>
+# 	  <% if @user.posts.length > 0 %>
+# 	    <% @user.posts.each do |post| %>
+# 	      <tr>
+# 	      	<% if post.user_id == @current_user.id %>
+# 	      	<td class="delete-button"><%= link_to 'x', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+# 	      	<% end %>
+# 	        <td style="width: 150px;"><strong style="font-size: 1.05em;"><%= link_to post.title, post %></strong><br>
+# 	        	<%=post.created_at.strftime("%b %e, %Y") %><br>
+# 	        	<%=post.created_at.in_time_zone(-4).strftime("%I:%M %p") %>
+# 			</td><br>
+# 	        <td style="width: 505px; padding-right: 20px;"><%= post.body %></td>
+# 	        <% if post.user_id == @current_user.id %>
+# 	        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+# 	        <% end %>
+# 	      </tr>
+# 	    <% end %>
+
+# 		<% else %>
+
+# 		    <p>You have no posts.</p>
+		    
+# 	    <% end %>
+
+# 	  </tbody>
+# 	</table>
+
+# 	</div>
+
+# </div>
+# </div>

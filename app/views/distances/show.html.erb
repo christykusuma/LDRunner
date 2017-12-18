@@ -1,0 +1,54 @@
+<%= render 'home/navbar' %>
+
+<div class="container">
+	<div class="races">
+			<div class="races__map">
+					Hello
+			</div>
+			<div class="races__search">
+					<div class="races__search--refine">Filter</div>
+					<input class="races__search--input" type="text" placeholder="Search..">
+					<a href="#"><i class="fa fa-search races__search--icon" aria-hidden="true"></i></a>
+			</div>
+			<div class="races__results">
+					<ul class="races__results--list">
+							<li class="races__results--list-item">Race result</li>
+							<li class="races__results--list-item">Race result</li>
+							<li class="races__results--list-item">Race result</li>
+							<li class="races__results--list-item">Race result</li>
+							<li class="races__results--list-item">Race result</li>
+							<li class="races__results--list-item">Race result</li>
+							<li class="races__results--list-item">Race result</li>
+							<li class="races__results--list-item">Race result</li>
+					</ul>
+			</div>
+	</div>
+</div>
+
+# <div class="distance-group" class="page">
+# 	<div class="distance">
+
+# 	<h1><%= @distance.description %> Running Group</h1>
+
+# <% @users.each do |user| %>
+# 	  <div>
+# 	    <table>
+# 	        <tr>
+# 	          <td><%= image_tag user.photo.url(:thumb) %></td>
+# 	          <td>
+# 	          <a style="font-size: 1.05em; font-weight: bold;" href="/users/<%= user.id %>">
+# 	            <%= user.first_name + " " + user.last_name %>
+# 	          </a><br>
+# 	          <%= link_to 'Add friend', friendship_path(friend_id: user.id), method: :post, data: { confirm: 'Are you sure?' } %>
+# 	          </td>
+# 	        </tr>
+# 	    </table>
+# 	  </div>
+# 	  <br>
+# <% end %>
+
+# 	  </div>
+
+# 	</div>
+
+# </div>

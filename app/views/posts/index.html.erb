@@ -1,0 +1,160 @@
+<%= render 'home/navbar' %>
+
+<div class="container">
+  <!-- If there is a current user, display home page -->
+  <% if @current_user %>
+
+  <div class="newsfeed">
+    <div class="newsfeed__posts">
+        <h3 class="newsfeed__title--posts">Newsfeed</h3>
+        <div class="newsfeed__post-item">
+            <img class="newsfeed__photo" src="img/race-1.jpg">
+            <div class="newsfeed__detail">Description</div>
+            <span class="newsfeed__description">Big Apple Half Marathon</span>
+        </div>
+        <div class="newsfeed__post-item">
+            <img class="newsfeed__photo" src="img/race-2.jpg">
+            <div class="newsfeed__detail">Description</div>
+            <span class="newsfeed__description">Queens Half Marathon</span>
+        </div>
+        <div class="newsfeed__post-item">
+            <img class="newsfeed__photo" src="img/race-3.jpg">
+            <div class="newsfeed__detail">Description</div>
+            <span class="newsfeed__description">Brooklyn Half Marathon</span>
+        </div>
+        <div class="newsfeed__post-item">
+            <img class="newsfeed__photo" src="img/race-4.jpg">
+            <div class="newsfeed__detail">Description</div>
+            <span class="newsfeed__description">Rock'n'Roll Half Marathon</span>
+        </div>
+        <div class="newsfeed__post-item">
+            <img class="newsfeed__photo" src="img/race-5.jpg">
+            <div class="newsfeed__detail">Description</div>
+            <span class="newsfeed__description">Jersey Half Marathon</span>
+        </div>
+        <div class="newsfeed__post-item">
+            <img class="newsfeed__photo" src="img/race-6.jpg">
+            <div class="newsfeed__detail">Description</div>
+            <span class="newsfeed__description">14.2 Manhattan</span>
+        </div>
+        <div class="newsfeed__post-item">
+            <img class="newsfeed__photo" src="img/race-7.jpg">
+            <div class="newsfeed__detail">Description</div>
+            <span class="newsfeed__description">Run to Remember Half Marathon</span>
+        </div>
+        <div class="newsfeed__post-item">
+            <img class="newsfeed__photo" src="img/race-8.jpg">
+            <div class="newsfeed__detail">Description</div>
+            <span class="newsfeed__description">B.A.A. Half Marathon</span>
+        </div>
+        <div class="newsfeed__post-item">
+            <img class="newsfeed__photo" src="img/race-9.jpg">
+            <div class="newsfeed__detail">Description</div>
+            <span class="newsfeed__description">Cambridge Half Marathon</span>
+        </div>
+        <div class="newsfeed__post-item">
+            <img class="newsfeed__photo" src="img/race-10.jpg">
+            <div class="newsfeed__detail">Description</div>
+            <span class="newsfeed__description">Citrus Half Marathon</span>
+        </div>
+    </div>
+
+    <div class="newsfeed__races">
+        <h3 class="newsfeed__title--races">Races</h3>
+        <div class="newsfeed__race-item">
+            <div class="newsfeed__race-item--add">
+                <i class="fa fa-plus-circle profile__race-item--add-icon" aria-hidden="true"></i>
+            </div>
+            <span class="date">01 / 21</span> Fred Lebow Manhattan Half Marathon
+        </div>
+        <div class="newsfeed__race-item">
+            <div class="newsfeed__race-item--add">
+                <i class="fa fa-plus-circle profile__race-item--add-icon" aria-hidden="true"></i>
+            </div>
+            <span class="date">02 / 04</span> Go Hard or Go Home Half Marathon
+        </div>
+        <div class="newsfeed__race-item">
+            <div class="newsfeed__race-item--add">
+                <i class="fa fa-plus-circle profile__race-item--add-icon" aria-hidden="true"></i>
+            </div>
+            <span class="date">02 / 25</span> Central Park Half Marathon
+        </div>	
+        <div class="newsfeed__race-item">
+            <div class="newsfeed__race-item--add">
+                <i class="fa fa-plus-circle profile__race-item--add-icon" aria-hidden="true"></i>
+            </div>
+            <span class="date">03 / 10</span> Frozen Penguin Half Marathon
+        </div>	
+        <div class="newsfeed__race-item">
+            <div class="newsfeed__race-item--add">
+                <i class="fa fa-plus-circle profile__race-item--add-icon" aria-hidden="true"></i>
+            </div>
+            <span class="date">03 / 18</span> United Airlines Half Marathon
+        </div>	
+        <div class="newsfeed__race-item">
+            <div class="newsfeed__race-item--add">
+                <i class="fa fa-plus-circle profile__race-item--add-icon" aria-hidden="true"></i>
+            </div>
+            <span class="date">03 / 24</span> Ladies First Half Marathon
+        </div>	
+    </div>
+  </div>
+</div>
+</div>
+
+
+# OLD PAGE
+  # <div class="all-posts">
+  #   <% if @posts.length > 0 %>
+  #       <% @posts.each do |post| %>
+  #     <div>
+  #       <table>
+  #           <tr>
+  #             <td><%= image_tag post.user.photo.url(:thumb) %></td>
+  #             <td>
+  #             <strong style="font-size: 1.25em;"><%= link_to post.title, post %></strong><br>
+  #             <a style="font-size: 1.05em;" href="/users/<%= post.user.id %>">
+  #               <%= post.user.first_name + " " + post.user.last_name %> </a><br>
+  #               <%=post.created_at.in_time_zone(-4).strftime("%A, %b %e, %Y") %> | 
+  #               <%=post.created_at.in_time_zone(-4).strftime("%I:%M %p") %>
+  #             </td>
+  #           </tr>
+  #       </table>
+  #           <%= post.body %>
+
+  #     </div>
+  #     <br>
+  #     <% end %>
+  #     <% else %>
+
+  #     <p>You have no friends.</p>
+
+  # <% end %>
+
+  # </div>
+
+  # <div class="all-races">
+
+  #   <h2>Upcoming Races</h2>
+
+  #   <table>
+  #     <tbody>
+  #       <% @races.each do |race| %>
+  #         <tr>
+
+  #           <td><%= race.date.strftime("%b %d") %></td>
+
+  #           <td><%= link_to race.name, race %></td>
+  #         </tr>
+  #       <% end %>
+  #     </tbody>
+  #   </table>
+
+  # </div>
+
+  # <!-- If no current user, go to login page -->
+  # <% else %>
+
+  #   <%= render 'home/login' %>
+
+  # <% end %>

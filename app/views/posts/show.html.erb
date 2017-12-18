@@ -1,0 +1,16 @@
+<%= render 'home/navbar' %>
+
+<div class="show-post" class="page">
+
+	<div class="post">
+
+	<p id="notice"><%= notice %></p>
+
+	<h1 style="display: inline-block"><%= @post.title %></h1> <%= link_to 'Edit', edit_post_path(@post) %> 
+
+	<p>
+	  <%= @post.body %>
+	</p>
+</div>
+
+</div>
