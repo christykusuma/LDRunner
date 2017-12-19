@@ -2,35 +2,34 @@
 
 <div class="container">
 	<div class="races">
-			<div class="races__map">
-					Hello
-			</div>
-			<div class="races__search">
-					<div class="races__search--refine">Filter</div>
-					<input class="races__search--input" type="text" placeholder="Search..">
-					<a href="#"><i class="fa fa-search races__search--icon" aria-hidden="true"></i></a>
-			</div>
-			<div class="races__results">
-					<table class="races__results--list">
-					<% @races.each do |race| %>
-						<%= link_to race do %>
-						<tr class="races__results--list-item">
-							<td>
-							<span class="date">
-								<%= race.date.strftime("%B %d, %Y") %>
-							</span> <%= race.name %>
-							</td>
-							<td>
-								<%= race.address %>
-							</td>
-							<td>
-								<%= race.details %>
-							</td>
-						</tr>
-						<% end %>
+
+
+		<div class="races__search">
+			<div class="races__search--refine">Filter</div>
+			<input class="races__search--input" type="text" placeholder="Search..">
+			<a href="#"><i class="fa fa-search races__search--icon" aria-hidden="true"></i></a>
+		</div>
+		<div class="races__results">
+			<table class="races__results--list">
+				<% @races.each do |race| %>
+					<%= link_to race do %>
+					<tr class="races__results--list-item">
+						<td>
+						<span class="date">
+							<%= race.date.strftime("%B %d, %Y") %>
+						</span> <%= race.name %>
+						</td>
+						<td>
+							<%= race.address %>
+						</td>
+						<td>
+							<%= race.details %>
+						</td>
+					</tr>
 					<% end %>
-					</table>
-			</div>
+				<% end %>
+			</table>
+		</div>
 	</div>
 </div>
 

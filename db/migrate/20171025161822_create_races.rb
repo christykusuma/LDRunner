@@ -6,6 +6,8 @@ class CreateRaces < ActiveRecord::Migration[5.1]
       t.datetime :date
       t.string :address
       t.string :distance
+      t.float :longitude
+      t.float :latitude
 
       t.timestamps
     end

@@ -39,7 +39,17 @@
 
     <div class="field">
       <%= form.label :distance %>
-      <%= form.select :distance, ['5K', '10K', 'Half-Marathon','Marathon'] %>
+      <%= form.select :distance, ['5K', '10K', 'Half-Marathon','Marathon'], id: race_distance %>
+    </div>
+
+    <div class="field">
+      <%= form.hidden_field :latitude%>
+      <%= form.hidden_field :latitude, id: :race_latitude %>
+    </div>
+
+    <div class="field">
+      <%= form.hidden_field :longitude %>
+      <%= form.hidden_field :longitude, id: :race_longitude %>
     </div>
 
     <div class="actions">
@@ -48,3 +58,25 @@
   <% end %>
 </div>
 </div>
+
+<div class="actions">
+</div>
+  <script>
+  document.addEventListener("DOMContentLoaded", function(){
+    geocoder = new google.maps.Geocoder();
+    address = document.getElementById("location")
+    function getPlace (address){
+        geocoder.geocode({'address': address}, function (results, status){
+        coords = results[0].geometry.location;
+        var temp1 = results[0].geometry.location.lat();
+        var temp2 = results[0].geometry.location.lng();
+        document.getElementById("latitude").value = temp1;
+        document.getElementById("longitude").value = temp2;
+    })
+    
+    }
+  </script>
+ < div class="actions">
+   <%= form.submit %>
+ </div>
+<% end %>

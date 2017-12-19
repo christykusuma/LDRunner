@@ -10,6 +10,7 @@ gem "paperclip", "~> 5.0.0"
 gem 'rails', '~> 5.1.4'
 
 gem 'actv'
+gem 'geocoder'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

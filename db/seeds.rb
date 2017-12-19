@@ -85,6 +85,8 @@ Race.create!([
 		date: '2017-12-15T06:00:00',
 		details: "Race details 1",
 		address: "New York, New York",
+		longitude: "-74.006835",
+		latitude: "40.709556" ,
 		distance: '5K'
 	},
 	{
@@ -93,6 +95,8 @@ Race.create!([
 		date: '2017-11-15T06:30:00',
 		details: "Race details 1",
 		address: "Bronx, New York",
+		longitude: "-74.006835",
+		latitude: "40.709556" ,
 		distance: '5K'
 	},
 	{
@@ -101,6 +105,8 @@ Race.create!([
 		date: '2017-11-15T07:45:00',
 		details: "Race details 1",
 		address: "Brooklyn, New York",
+		longitude: "-74.006835",
+		latitude: "40.709556" ,
 		distance: '5K'
 	},
 	{
@@ -109,6 +115,8 @@ Race.create!([
 		date: '2017-11-20T08:45:00',
 		details: "Race details 2",
 		address: "Manhattan, New York",
+		longitude: "-74.006835",
+		latitude: "40.709556" ,
 		distance: '10K'
 	},
 	{
@@ -117,6 +125,8 @@ Race.create!([
 		date: '2017-11-23T09:00:00',
 		details: "Race details 3",
 		address: "Jersey City, New Jersey",
+		longitude: "-74.006835",
+		latitude: "40.709556" ,
 		distance: 'Half Marathon'
 	},
 	{
@@ -125,6 +135,8 @@ Race.create!([
 		date: '2017-10-14T09:00:00',
 		details: "Race details 3",
 		address: "Queens, New York",
+		longitude: "-74.006835",
+		latitude: "40.709556" ,
 		distance: 'Half Marathon'
 	},
 	{
@@ -133,6 +145,8 @@ Race.create!([
 		date: '2018-01-21T08:00:00',
 		details: "Race details 3",
 		address: "New York, New York",
+		longitude: "-74.006835",
+		latitude: "40.709556" ,
 		distance: 'Half Marathon'
 	},
 	{
@@ -141,6 +155,8 @@ Race.create!([
 		date: '2018-02-04T10:00:00',
 		details: "Race details 3",
 		address: "Brooklyn, New York",
+		longitude: "-74.006835",
+		latitude: "40.709556" ,
 		distance: 'Half Marathon'
 	},
 	{
@@ -149,6 +165,8 @@ Race.create!([
 		date: '2018-02-25T09:00:00',
 		details: "Race details 3",
 		address: "New York, New York",
+		longitude: "-74.006835",
+		latitude: "40.709556" ,
 		distance: 'Half Marathon'
 	},
 	{
@@ -157,6 +175,8 @@ Race.create!([
 		date: '2018-03-10T08:00:00',
 		details: "Race details 3",
 		address: "Brooklyn, New York",
+		longitude: "-74.006835",
+		latitude: "40.709556" ,
 		distance: 'Half Marathon'
 	},
 	{
@@ -165,6 +185,8 @@ Race.create!([
 		date: '2018-03-18T07:30:00',
 		details: "Race details 3",
 		address: "New York, New York",
+		longitude: "-74.006835",
+		latitude: "40.709556" ,
 		distance: 'Half Marathon'
 	},
 	{
@@ -173,6 +195,8 @@ Race.create!([
 		date: '2018-03-24T08:00:00',
 		details: "Race details 3",
 		address: "Brooklyn, New York",
+		longitude: "-74.006835",
+		latitude: "40.709556" ,
 		distance: 'Half Marathon'
 	}
 ])
