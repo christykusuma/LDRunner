@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171025190632) do
+ActiveRecord::Schema.define(version: 20171219203238) do
 
   create_table "distances", force: :cascade do |t|
     t.string "description"
@@ -67,9 +67,9 @@ ActiveRecord::Schema.define(version: 20171025190632) do
     t.string "photo_content_type"
     t.integer "photo_file_size"
     t.datetime "photo_updated_at"
-    t.integer "distance_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "distance_id"
     t.index ["distance_id"], name: "index_users_on_distance_id"
   end
 
