@@ -66,6 +66,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def race_params
-      params.require(:race).permit(:name, :details, :date, :address, :distance, :latitude, :longitude)
+      params.require(:race).permit(:name, :details, :date, :address, :city, :state, :distance, :latitude, :longitude)
     end
 end

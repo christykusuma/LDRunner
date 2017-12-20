@@ -38,12 +38,14 @@ ActiveRecord::Schema.define(version: 20171219203238) do
 
   create_table "races", force: :cascade do |t|
     t.string "name"
-    t.text "details"
     t.datetime "date"
+    t.text "details"
     t.string "address"
-    t.string "distance"
+    t.string "city"
+    t.string "state"
     t.float "longitude"
     t.float "latitude"
+    t.string "distance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -9,7 +9,7 @@
 <% @results.each do |user| %>
 	  <div>
 	    <table>
-	        <tr>
+	        <tr class="search-results__person">
 	          <td><%= image_tag user.photo.url(:thumb) %></td>
 	          <td>
 	          <a style="font-size: 1.05em;" href="/users/<%= user.id %>">

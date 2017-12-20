@@ -6,6 +6,11 @@ class DistancesController < ApplicationController
     @users = User.where( distance_id: @distance.id)
     @distance = Distance.find_by(id: @current_user.distance_id)
     @races = Race.all
+    if params[:search]
+      @races = Race.search(params[:search]).order("created_at DESC")
+    else
+      @races = Race.all.order("created_at DESC")
+    end
   end
 
   # POST /distances
