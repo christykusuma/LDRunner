@@ -1,16 +1,26 @@
 <%= render 'home/navbar' %>
 
-<div class="show-post" class="page">
+<div class="body">
+	<div class="show-post" class="page">
 
-	<div class="post">
+		<%= image_tag @post.photo.url(:medium), class: "show-post__photo" %>
 
-	<p id="notice"><%= notice %></p>
+		<div class="show-post__text">
+			<p id="notice"><%= notice %></p>
+			<h1 style="display: inline-block"><%= @post.title %></h1> 
+			<% if @post.user_id == @current_user.id %>
+				<%= link_to 'Edit', edit_post_path(@post), class: "edit-button" %> 
+			<% end %>
+			<br>
+			<%= @post.created_at.strftime("%A, %b %e, %Y") %> | <%= @post.created_at.in_time_zone(-4).strftime("%I:%M %p") %>
+			<br><br>
+			<p>
+				<%= @post.body %>
+			</p><br>
+			<% if @post.user_id == @current_user.id %>
+				<%= link_to 'Delete Post', @post, method: :delete, class: "delete-button", data: { confirm: 'Are you sure?' } %>
+			<% end %>
+		</div>
 
-	<h1 style="display: inline-block"><%= @post.title %></h1> <%= link_to 'Edit', edit_post_path(@post) %> 
-
-	<p>
-	  <%= @post.body %>
-	</p>
-</div>
-
+	</div>
 </div>

@@ -1,0 +1,49 @@
+.form {
+    background-color: $white-color;
+    height: 100vh;
+    padding-top: 150px;
+    color: $white-color;
+    font-family: $sans-serif-font;
+    position: relative;
+    .form-table {
+        padding: 40px 200px;
+        padding-top: 0px;
+        background-color: $white-color;
+        color: black;
+        width: 50%;  
+        @include absCenter;
+        padding-left: 0;
+        top: 350px;
+    }
+    h1 {
+        font-size: 2.6rem;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+    .field {
+        font-size: 1.8rem;
+        display: table;
+        width: 100%;
+        padding: 5px;
+        label {
+            display: table-cell;
+            width: 30%;
+            vertical-align: top;
+        }
+        input, textarea {
+            display: table-cell;
+            width: 95%;
+        }
+        textarea {
+            height: 80px;
+        }
+        input {
+            height: 25px;
+        }
+        input[type=submit] {
+            text-align: right;
+            background-color: orange;
+        }
+    }
+}

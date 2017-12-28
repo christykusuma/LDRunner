@@ -98,7 +98,7 @@
 								<% @user.posts.each do |post| %>
 								<%= link_to post do %>
 								<div class="profile__post-item">
-										<img class="profile__post-photo" src="img/race-1.jpg">
+										<%= image_tag post.photo.url(:medium), class: "profile__post-photo" %>
 										<span class="profile__post-description">
 												<span class="profile__post-description--title">
 													<%= post.title %>

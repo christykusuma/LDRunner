@@ -165,13 +165,18 @@
         margin: 1.5%;
         margin-left: 5%;
         margin-bottom: 3%;
+        padding-top: 1.5%;
+        padding-left: 1.5%;
     }
     &__post-item:hover {
         border: 10px solid $primary-color;
     }
+    %__post-item:hover &__post-photo {
+        margin-top: 20px;
+    }
 	&__post-photo {
 		width: 20%;
-		height: 100%;
+		padding-bottom: 17px;
 	}
 	&__post-description {
 		background-color: $white-color;

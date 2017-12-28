@@ -6,23 +6,28 @@
 
   <div class="newsfeed">
     <div class="newsfeed__posts">
-        <h3 class="newsfeed__title--posts">Newsfeed</h3>
+        <h3 class="newsfeed__title--posts">Friends Latest Activities</h3>
 
      <% if @posts.length > 0 %>
         <% @posts.each do |post| %>   
-
-        <div class="newsfeed__post-item">
-            <img class="newsfeed__photo" src="img/race-1.jpg">
-            <div class="newsfeed__detail">
-                <%= image_tag post.user.photo.url(:thumb) %><br>
-                <%= post.user.first_name + " " + post.user.last_name %><br>
-                <%=post.created_at.in_time_zone(-4).strftime("%A, %b %e, %Y") %><br>
-                <%=post.created_at.in_time_zone(-4).strftime("%I:%M %p") %>
+        <%= link_to post do %>
+            <div class="newsfeed__post-item">
+                <div class="newsfeed__post-header"> 
+                    <div class="newsfeed__post-header--photo">
+                        <%= image_tag post.user.photo.url(:thumb) %>
+                    </div>
+                    <div class="newsfeed__post-header--details">
+                        <%= post.user.first_name + " " + post.user.last_name %> posted <span class="newsfeed__post-header--title"><%= post.title %></span><br>
+                        <%=post.created_at.strftime("%A, %b %e, %Y") %> | <%=post.created_at.in_time_zone(-4).strftime("%I:%M %p") %> 
+                    </div>
+                </div>
+                <span class="newsfeed__post-description">
+                    <span class="newsfeed__post-description--details">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac nisi quis dolor luctus tristique. Nunc non pulvinar est. Suspendisse lacinia, urna eget ornare accumsan, dolor eros sodales diam, ut consectetur lacus augue nec quam. Fusce consequat a ante eu tempus. Integer vehicula purus ac mauris suscipit elementum. Cras rutrum convallis turpis vel malesuada. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce in urna id nisl posuere ullamcorper. Aenean eget lacus ante. Cras in fringilla sem. In sit amet rhoncus quam, ut posuere dolor. Fusce nec mi nunc.
+                    </span>
+                </span>
             </div>
-            <span class="newsfeed__description">
-                <%= link_to post.title, post %>
-            </span>
-        </div>
+        <% end %>
         <% end %>
         <% else %>
         <p>Your friends have no posts.</p>
