@@ -64,5 +64,18 @@
         width: 100vw;
         height: 100vh;
         top: 0;
-    }
+	}
+	.examples {
+		background-color: white;
+		opacity: 1;
+		padding: 35px;
+		color: black;
+		text-align: left;
+		width: 400px;
+		bottom: 0;
+		margin: 50px;
+		position: absolute;
+		font-size: 1.8em;
+		font-family: $sans-serif-font;
+	}
 }
