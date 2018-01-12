@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You would need to register for a Google API Key for the maps and the Google Search features used for each individual restaurant.
+You would need to register for a Google API Key for the maps and the Google Search features used for each individual race.
 
 Add your API Key as an environment variable in your `~/.bash_profile`.
 
