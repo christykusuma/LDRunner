@@ -1,6 +1,8 @@
 # LDRunner
 
-LDRunner is for long distance runners, who incorporate races into their daily lives and would love to build a running community around it. Main features include tracking past and upcoming races, searching new races, and creating running-related blog posts. You will also be able to see your friends' recent activities and become aware of activities from people who share your current distance goal -- 5K, 10K, Half Marathon, and Marathon. 
+This app is for long distance runners, who incorporate races into their daily lives and would love to build a community around this passion. Main features include tracking past and upcoming races, searching new races, and creating running-related blog posts. You will also be able to see your friends' recent activities and become aware of activities happening around you based on your current distance goal -- 5K, 10K, Half Marathon, and Marathon.
+
+Feel free to play around with the <a href="https://ldrunner.herokuapp.com/">demo</a>.
 
 ## Getting Started
 
